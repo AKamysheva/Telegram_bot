@@ -1,13 +1,14 @@
 [project]
-name = "analytics video bot"
+name = "tg_bot"
 version = "0.1.0"
 description = ""
 authors = [
     {name = "Anastasia Kamysheva",email = "anastasiia.kamysheva@outlook.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.13,<3.15"
 dependencies = [
+    "aiogram (>=3.23.0,<4.0.0)"
 ]
 
 
