@@ -8,6 +8,7 @@ class Settings(BaseSettings):
     POSTGRES_DB: str
     HOST_DB: str
     PORT_DB: int
+    OPENROUTER_API_KEY: str
 
     @property
     def database_url(self):
