@@ -1,2 +1,4 @@
 .history/
 .env
+videos.json
+__pycache__
