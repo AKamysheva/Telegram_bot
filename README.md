@@ -14,7 +14,7 @@
 git clone https://github.com/AKamysheva/Telegram_bot.git
 poetry install
 ```
-2. Create an .env file
+2. Создайте .env файл 
 ```python
 BOT_TOKEN=mybottoken
 POSTGRES_USER=myuser
@@ -24,7 +24,8 @@ HOST_DB=db
 PORT_DB=5432
 OPENROUTER_API_KEY=myapikey
 ```
-3. Запуск в Docker
+3. Создайте бота через @BotFather и получите токен, добавьте его в файл `.env`
+4. Запуск в Docker
 ```python
 docker build -t bot .
 docker compose up -d
@@ -33,7 +34,8 @@ docker compose up -d
 ## Дополнительно
 
 Для загрузки данных в базу требуется файл `videos.json` с исходными данными.  
-Этот файл **не включён** в репозиторий по причинам конфиденциальности.  
+Этот файл **не включён** в репозиторий по причинам конфиденциальности.
+Файл должен быть размещён в директории bot/ перед запуском скрипта загрузки данных.
 Структура файла должна соответствовать примеру:
 
 ```json
