@@ -1,4 +1,4 @@
-CREATE TABLE Videos 
+CREATE TABLE IF NOT EXISTS Videos 
 (
   id UUID PRIMARY KEY,
   video_created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
@@ -11,7 +11,7 @@ CREATE TABLE Videos
   updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now()
 );
 
-CREATE TABLE Video_snapshots 
+CREATE TABLE IF NOT EXISTS Video_snapshots 
 (
   id UUID PRIMARY KEY,
   video_id UUID NOT NULL,
@@ -28,4 +28,4 @@ CREATE TABLE Video_snapshots
   updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now()
 );
 
-CREATE INDEX idx_video_snapshots_video_id ON video_snapshots (video_id);
+CREATE INDEX IF NOT EXISTS idx_video_snapshots_video_id ON video_snapshots (video_id);
