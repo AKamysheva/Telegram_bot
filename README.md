@@ -14,7 +14,7 @@
 git clone https://github.com/AKamysheva/Telegram_bot.git
 poetry install
 ```
-2. Создайте .env файл 
+2. Создайте .env файл в папке bot
 ```python
 BOT_TOKEN=mybottoken
 POSTGRES_USER=myuser
@@ -29,6 +29,10 @@ OPENROUTER_API_KEY=myapikey
 ```python
 docker build -t bot .
 docker compose up -d
+
+# выполняем инициализацию данных
+docker compose run bot poetry run python -m bot.db.init_db 
+docker compose run bot poetry run python -m bot.db.load-json
 ```
 
 ## Дополнительно
