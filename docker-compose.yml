@@ -8,6 +8,8 @@ services:
       - postgres_data:/var/lib/postgresql/data
     env_file:
       - ./bot/.env
+    environment:
+      - TZ=Asia/Tbilisi
 
   bot:
     image: bot:latest
@@ -18,10 +20,7 @@ services:
       - .:/bot
     env_file:
       - ./bot/.env
-    command: bash -c "
-      poetry run python -m bot.db.init_db && \
-      poetry run python -m bot.db.load-json && \
-      poetry run python -m bot.main"
+    command: poetry run python -m bot.main
 
 
 volumes:
